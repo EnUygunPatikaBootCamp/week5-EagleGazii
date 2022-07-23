@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} INDEX {% endblock %}
+
+{% block body %}
+
+
+    <form method="post" action="/index">
+
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Convert your Markdown to a HTML CODE</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="area" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary mb-2">Check</button>
+        </div>
+    </form>
+
+    <div>
+       <h3>Convert Markdwon as HTML syntax codes</h3>
+       <pre>
+           {{ parser }}
+       </pre>
+    </div>
+    <div>
+        <h3>Convert Markdown as HTML view</h3>
+        {{ parser|raw }}
+    </div>
+
+{% endblock %}
